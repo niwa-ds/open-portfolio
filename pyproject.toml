@@ -1,0 +1,92 @@
+[project]
+name = "datatools"
+version = "0.1.0"
+requires-python = ">=3.11"
+description = "Personal data analysis utilities and environment"
+readme = "README.md"
+
+#=========================
+# Runtime Dependencies
+#=========================
+dependencies = [
+	# Basic Data Analysis
+	"numpy",
+	"pandas",
+	"matplotlib",
+	"seaborn",
+
+	# Machine Learning / Statics
+	"scikit-learn",
+	"scipy",
+	"statsmodels",
+
+	# Natural Language Processing
+	"fugashi",
+	"unidic-lite",
+]
+
+#=========================
+# Development Dependencies
+#=========================
+[project.optional-dependencies]
+dev = [
+	"pytest",
+	"pytest-cov",
+	"black",
+	"isort",
+	"flake8",
+	"mypy"
+]
+
+notebook = [
+	"jupyterlab",
+	"ipykernel",
+]
+
+#=========================
+# Build System
+#=========================
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+#=========================
+# Setuptools Settings (src layout)
+#=========================
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+#=========================
+# pytest configuration
+#=========================
+[tool.pytest.ini_options]
+addopts = "--maxfail=1 -q"
+testpaths = ["tests"]
+
+#=========================
+# Formatter / Linter Tools
+#=========================
+
+# black
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+
+# isort
+[tool.isort]
+profile = "black"
+src_paths = ["src"]
+
+# flake8
+[tool.flake8]
+max-line-length = 88
+ignore = ["E203", "W503"]
+exclude = [".git", "__pycache__", "build", "dist"]
+
+# mypy
+[tool.mypy]
+python_version = "3.11"
+ignore_missing_imports = true

@@ -1,0 +1,27 @@
+services:
+  notebook:
+    # Build the image using the Dockerfile in the current directory
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+
+    # Set working directory inside the container
+    working_dir: /workspace
+
+    # Expose JupyterLab Port
+    ports:
+      - "127.0.0.1:8888:8888"
+
+    # Mount the project directory into the container workspace
+    volumes:
+      - ./src:/workspace/src
+      - ./tests:/workspace/tests
+      - ./data:/workspace/data
+      - ./cases:/workspace/cases
+
+    # Keep container interactive-friendly
+    tty: true
+    stdin_open: true
+
+    # No restart policy needed for Local development
+    restart: "no"

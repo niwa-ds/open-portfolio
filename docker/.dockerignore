@@ -1,0 +1,25 @@
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter notebook auto-generated files
+.ipynb_checkpoints/
+*.ipynb~
+
+# Local virtual environments
+.venv/
+venv/
+env/
+
+# OS-specific temporary files
+.DS_Store
+Thumbs.db
+
+# Editor settings
+.vscode/
+.idea/
+
+# Logs / temp files
+*.log
+*.tmp

@@ -1,0 +1,34 @@
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter notebook auto-generated files
+.ipynb_checkpoints/
+*.ipynb~
+
+# Local virtual environments
+.venv/
+venv/
+env/
+
+# Folders and files to exclude from Docker build
+data/
+*.csv
+*.xlsx
+
+# OS-specific temporary files
+.DS_Store
+Thumbs.db
+.Trash-*
+
+
+# Editor file
+vscode/
+idea/
+
+# Temp file
+*.log
+*.tmp
+*.swp
+*.bak

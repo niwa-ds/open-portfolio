@@ -127,5 +127,4 @@ EDAを通じて、
 case02/
 ├─ README.md
 ├─ sql/            # 顧客単位指標の作成クエリ
-├─ notebooks/      # EDA用ノートブック
-└─ reports/        # 図表・要約資料
+└─ notebooks/      # EDA用ノートブック
